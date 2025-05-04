@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 const MAZE = [
   [1,1,1,1,1],
@@ -140,7 +142,7 @@ function createMaze() {
 }
 
 function loadFont() {
-  const loader = new THREE.FontLoader();
+  const loader = new FontLoader();
   loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (loadedFont) => {
     font = loadedFont;
   });
@@ -179,7 +181,7 @@ function animate() {
   if (goalWall && font) {
     const distance = controls.getObject().position.distanceTo(goalWall.position);
     if (distance < CELL_SIZE * 1.5 && !goalWall.userData.solved) {
-      const textGeo = new THREE.TextGeometry(GOAL_TEXT, {
+      const textGeo = new TextGeometry(GOAL_TEXT, {
         font: font,
         size: 2,
         height: 0.5,
