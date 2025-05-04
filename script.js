@@ -8,7 +8,7 @@ const maxAttempts = 6;
 const win = `
 Vi sa att vi skulle vänta med firande av dig till Rasmus var hemma igen. Och det är han nu…
 \r\n
-Den 28’e augusti vid tretiden blir du hämtad i Hägggenäs för en färd norrut. Där skall det firas att du fyllt 75, men även en form av 40-årsjubileum, med strömmens former och ledare, djupa och vilande färger, samt osannolika farkoster. Alt detta till ljuset av stearinljus. När solens sista strålar försvunnit bakom horisonten beges det av hemåt och du återvänder till Häggenäs ca två (timmar) i midnatt.
+Den 28’e augusti vid tretiden blir du hämtad i Hägggenäs för en färd norrut. Där skall det firas att du fyllt 75, men även en form av 40-årsjubileum. Med strömmens former och ledare, djupa och vilande färger, samt osannolika farkoster. Allt detta till skenet av stearinljus. När solens sista strålar försvunnit bakom horisonten beges det av hemåt och du återvänder till Häggenäs ca två (timmar) i midnatt.
 `
 
 // Funktion för att rita hänggubben på canvasen
@@ -19,44 +19,55 @@ function drawHangman() {
 
     // Hänggubbe steg baserat på antal fel
     if (incorrectGuesses >= 1) {
-        // Huvud
+        // Bas
         ctx.beginPath();
-        ctx.arc(100, 30, 15, 0, Math.PI * 2, true);
+        ctx.moveTo(20, 180);
+        ctx.lineTo(60, 180);
+        ctx.moveTo(40, 20);
+        ctx.lineTo(40, 180);
         ctx.stroke();
     }
     if (incorrectGuesses >= 2) {
-        // Kropp
+        // Galge
         ctx.beginPath();
-        ctx.moveTo(100, 45);
-        ctx.lineTo(100, 100);
+        ctx.moveTo(40, 20);
+        ctx.lineTo(150, 20);
+        ctx.lineTo(150, 45);
+        ctx.moveTo(40, 60);
+        ctx.lineTo(80, 20);
         ctx.stroke();
     }
     if (incorrectGuesses >= 3) {
-        // Ben (vänster)
+        // Huvud
         ctx.beginPath();
-        ctx.moveTo(100, 100);
-        ctx.lineTo(80, 130);
+        ctx.arc(150, 60, 15, 0, Math.PI * 2, true);
         ctx.stroke();
     }
     if (incorrectGuesses >= 4) {
-        // Ben (höger)
+        // Kropp
         ctx.beginPath();
-        ctx.moveTo(100, 100);
-        ctx.lineTo(120, 130);
+        ctx.moveTo(150, 75);
+        ctx.lineTo(150, 130);
         ctx.stroke();
     }
     if (incorrectGuesses >= 5) {
-        // Arm (vänster)
+        // Ben (vänster)
         ctx.beginPath();
-        ctx.moveTo(100, 60);
-        ctx.lineTo(80, 80);
+        ctx.moveTo(150, 130);
+        ctx.lineTo(130, 160);
+        // Ben (höger)
+        ctx.moveTo(150, 130);
+        ctx.lineTo(170, 160);
         ctx.stroke();
     }
     if (incorrectGuesses >= 6) {
         // Arm (höger)
         ctx.beginPath();
-        ctx.moveTo(100, 60);
-        ctx.lineTo(120, 80);
+        ctx.moveTo(150, 90);
+        ctx.lineTo(170, 110);
+        // Arm (vänster)
+        ctx.moveTo(150, 90);
+        ctx.lineTo(120, 110);
         ctx.stroke();
     }
 }
