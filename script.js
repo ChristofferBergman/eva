@@ -6,7 +6,7 @@ let incorrectGuesses = 0;
 const maxAttempts = 6;
 
 const win = `
-När vi satt i Höör blev jag rädd att vi hade glömt 75-årspresent till dig. Men det var ju sagt att vi skulle vänta med sånt till Rasmus var hemma igen. Och det är han nu…
+Vi sa att vi skulle vänta med firande av dig till Rasmus var hemma igen. Och det är han nu…
 \r\n
 Den 28’e augusti vid tretiden blir du hämtad i Hägggenäs för en färd norrut. Där skall det firas att du fyllt 75, men även en form av 40-årsjubileum, med strömmens former och ledare, djupa och vilande färger, samt osannolika farkoster. Alt detta till ljuset av stearinljus. När solens sista strålar försvunnit bakom horisonten beges det av hemåt och du återvänder till Häggenäs ca två (timmar) i midnatt.
 `
