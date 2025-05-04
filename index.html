@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eva 75 Hänga Gubbe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        #canvas {
+            margin-top: 20px;
+            border: 1px solid black;
+        }
+        #word {
+            font-size: 30px;
+            letter-spacing: 10px;
+        }
+        #guessed-letters {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .hidden {
+            color: grey;
+        }
+        .correct {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eva 75 Hänga Gubbe</h1>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <div id="word"></div>
+    <div id="guessed-letters">Gissade bokstäver: </div>
+    <div>
+        <input type="text" id="letter-input" maxlength="1" />
+        <button onclick="guessLetter()">Gissa bokstav</button>
+    </div>
+    <div id="message" style="white-space: pre-line;"></div>
+    <br/>
+    <div>
+        <button onclick="resetGame()">Starta om spelet</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
