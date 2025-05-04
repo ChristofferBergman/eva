@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Maze</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+    #mobile-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+    #mobile-controls button {
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+      font-size: 20px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div id="mobile-controls" style="display:none;">
+    <button id="forward">↑</button><br>
+    <button id="left">←</button>
+    <button id="backward">↓</button>
+    <button id="right">→</button>
+  </div>
+
+  <script type="module">
+    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+    import { PointerLockControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/PointerLockControls.js';
+    import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/FontLoader.js';
+    import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/geometries/TextGeometry.js';
+
+    import { initMazeApp } from './maze.js';
+    initMazeApp(THREE, PointerLockControls, FontLoader, TextGeometry);
+  </script>
+</body>
+</html>
