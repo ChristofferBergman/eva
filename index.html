@@ -30,14 +30,7 @@
     <button id="right">→</button>
   </div>
 
-  <script type="module">
-    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-    import { PointerLockControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/PointerLockControls.js';
-    import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/FontLoader.js';
-    import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/geometries/TextGeometry.js';
-
-    import { initMazeApp } from './maze.js';
-    initMazeApp(THREE, PointerLockControls, FontLoader, TextGeometry);
-  </script>
+  <!-- MAIN SCRIPT -->
+  <script type="module" src="./maze.js"></script>
 </body>
 </html>
