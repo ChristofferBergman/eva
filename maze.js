@@ -1,7 +1,7 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js';
-import { PointerLockControls } from 'https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/controls/PointerLockControls.js';
-import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/loaders/FontLoader.js';
-import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/geometries/TextGeometry.js';
+import * as THREE from 'three';
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+import { FontLoader } from 'three/addons/controls/FontLoader.js';
+import { TextGeometry } from 'three/addons/controls/TextGeometry.js';
 
 const MAZE = [
   [1, 1, 1, 1, 1],
