@@ -1,5 +1,5 @@
 // Hårdkodat ord
-const word = "APA";
+const word = "SNYGGE STOFFE";
 let guessedLetters = [];
 let correctGuesses = [];
 let incorrectGuesses = 0;
@@ -71,7 +71,10 @@ function displayWord() {
         const letter = word[i];
         const span = document.createElement('span');
         
-        if (correctGuesses.includes(letter)) {
+        if (letter === ' ') {
+            span.textContent = ' ';
+            span.classList.add('correct');  // Lägg till rätt klass för mellanslag
+        } else if (correctGuesses.includes(letter)) {
             span.textContent = letter;
             span.classList.add('correct');
         } else {
@@ -92,7 +95,7 @@ function toggleGuessButton(isDisabled) {
 // Funktion för att gissa bokstav
 function guessLetter() {
     // Om spelet redan är över, gör inget
-    if (incorrectGuesses >= maxAttempts || correctGuesses.length === new Set(word).size) {
+    if (incorrectGuesses >= maxAttempts || correctGuesses.length === new Set(word.replace(/\s/g, '')).size) {
         return;
     }
 
@@ -100,7 +103,7 @@ function guessLetter() {
     const guessedLetter = letterInput.value.toUpperCase();
 
     // Kontrollera om det är en giltig bokstav och inte redan gissad
-    if (guessedLetter && !guessedLetters.includes(guessedLetter)) {
+    if (guessedLetter && !guessedLetters.includes(guessedLetter) && guessedLetter !== ' ') {
         guessedLetters.push(guessedLetter);
 
         // Kontrollera om bokstaven finns i ordet
@@ -118,7 +121,7 @@ function guessLetter() {
         if (incorrectGuesses >= maxAttempts) {
             document.getElementById('message').textContent = 'Du förlorade! Tryck Starta om spelet för att försöka igen.'
             toggleGuessButton(true); // Inaktivera knappen
-        } else if (correctGuesses.length === new Set(word).size) {
+        } else if (correctGuesses.length === new Set(word.replace(/\s/g, '')).size) {
             document.getElementById('message').textContent = `Grattis, du gissade rätt!\r\n
 Här är din födelsedagspresent:\r\n
 ` + win;
