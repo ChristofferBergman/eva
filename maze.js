@@ -1,7 +1,7 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.127.0/build/three.module.js';
-import { PointerLockControls } from 'https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/controls/PointerLockControls.js';
-import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/loaders/FontLoader.js';
-import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/geometries/TextGeometry.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js';
+import { PointerLockControls } from 'https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/controls/PointerLockControls.js';
+import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/loaders/FontLoader.js';
+import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/geometries/TextGeometry.js';
 
 const MAZE = [
   [1, 1, 1, 1, 1],
@@ -10,7 +10,6 @@ const MAZE = [
   [1, 0, 1, 0, 1],
   [1, 1, 1, 2, 1], // Goal is at [4][3]
 ];
-
 const CELL_SIZE = 10;
 const GOAL_TEXT = "You made it!";
 
