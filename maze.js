@@ -10,6 +10,7 @@ const MAZE = [
   [1, 0, 1, 0, 1],
   [1, 1, 1, 2, 1], // Goal is at [4][3]
 ];
+
 const CELL_SIZE = 10;
 const GOAL_TEXT = "You made it!";
 
